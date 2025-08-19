@@ -1,4 +1,4 @@
-pub fn rectangles() -> () {
+pub fn run() {
     no_struct();
     with_tuple();
     with_structs();

@@ -1,16 +1,17 @@
-use crate::references_and_borrowing::references_and_borrowing;
-use crate::structs::structs;
-use crate::rectangles::rectangles;
-use crate::enums::enums;
+pub mod ownership;
+pub mod structs;
+pub mod enums_and_pattern_matching;
 
-mod references_and_borrowing;
-mod structs;
-mod rectangles;
-mod enums;
+use ownership::references_and_borrowing;
+use structs::defining_structs;
+use structs::rectangles;
+use enums_and_pattern_matching::enums;
+use enums_and_pattern_matching::pattern_matching;
 
 fn main() {
-    // references_and_borrowing();
-    // structs();
-    // rectangles();
-    enums();
+    references_and_borrowing::run();
+    defining_structs::run();
+    rectangles::run();
+    enums::run();
+    pattern_matching::run();
 }
