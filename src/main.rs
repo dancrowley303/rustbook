@@ -9,7 +9,8 @@ pub mod collections;
 // use enums_and_pattern_matching::enums;
 // use enums_and_pattern_matching::pattern_matching;
 // use collections::vectors;
-use collections::strings;
+// use collections::strings;
+use collections::hashmaps;
 
 fn main() {
     // references_and_borrowing::run();
@@ -18,5 +19,6 @@ fn main() {
     // enums::run();
     // pattern_matching::run();
     // vectors::run();
-    strings::run();
+    // strings::run();
+    hashmaps::run();
 }
