@@ -1,4 +1,4 @@
-pub fn run() -> () {
+pub fn run() {
     ownership();
     ret_values();
     ret_multiple();
@@ -30,12 +30,14 @@ fn notes_on_data_races() {
     //note that this would not compile
     let mut s = String::from("hello from notes_on_data_races");
     let r1 = &mut s;
-    // compiler stops the line below
+    // the compiler stops the line below
     //let r2 = &mut s;
 
     // an exclusive mutable borrow ensures data races can't occur
 
     //println!("{r1}, {r2}");
+
+    println!("{r1}");
 }
 
 fn borrow_mut_can_modify() {
@@ -56,6 +58,7 @@ fn borrow_cant_modify() {
 fn change(some_string: &String) {
     // below causes a compiler error because can't borrow immutable
     //some_string.push_str(", world");
+    println!("{some_string}");
 }
 
 fn borrow() {
@@ -86,7 +89,9 @@ fn calculate_length(s: String) -> (String, usize) {
 
 fn ret_values() {
     let s1 = gives_ownership();     //fn moves its return value into s1
+    println!("{s1}");
     let s2 = String::from("hello from ret_values"); //s2 comes into scope
+    println!("{s2}");
 
     let s3 = takes_and_gives_back(s2); // s2 is moved into takes_and_gives_back, which also moves its return value into s3
     // from here, s2 was moved

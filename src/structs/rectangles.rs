@@ -44,9 +44,6 @@ fn more_method_params() {
         height: u32,
     }
     impl Rectangle {
-        fn area(&self) -> u32 {
-            self.width * self.height
-        }
 
         fn can_hold(&self, other: &Rectangle) -> bool {
             self.width > other.width && self.height > other.height
@@ -123,6 +120,7 @@ fn with_traits() {
         height: 50,
     };
     dbg!(&rect2);
+    println!("{} {}", rect1.width, rect1.height);
 }
 
 // this is not from the book, but I wanted to test mutable bindings

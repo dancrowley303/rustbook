@@ -9,28 +9,6 @@ fn let_else() {
     enum UsState {
         Alabama,
         Alaska,
-        Arkansas,
-        California,
-        Delaware,
-        Florida,
-        Georgia,
-        Hawaii,
-        Idaho,
-        Illinois,
-        Indiana,
-        Iowa,
-        Kansas,
-        Kentucky,
-        Louisiana,
-        Maine,
-        Maryland,
-        Massachusetts,
-        Michigan,
-        Minnesota,
-        Mississippi,
-        Missouri,
-        Montana,
-        Nebraska,
     }
     enum Coin {
         Penny,
@@ -44,28 +22,6 @@ fn let_else() {
             match self {
                 UsState::Alabama => year >= 1863,
                 UsState::Alaska => year >= 1965,
-                UsState::Arkansas => year >= 1965,
-                UsState::California => year >= 1863,
-                UsState::Delaware => year >= 1776,
-                UsState::Florida => year >= 1787,
-                UsState::Georgia => year >= 1789,
-                UsState::Hawaii => year >= 1965,
-                UsState::Idaho => year >= 1965,
-                UsState::Illinois => year >= 1789,
-                UsState::Indiana => year >= 1789,
-                UsState::Iowa => year >= 1863,
-                UsState::Kansas => year >= 1863,
-                UsState::Kentucky => year >= 1789,
-                UsState::Louisiana => year >= 1789,
-                UsState::Maine => year >= 1789,
-                UsState::Maryland => year >= 1789,
-                UsState::Massachusetts => year >= 1789,
-                UsState::Michigan => year >= 1863,
-                UsState::Minnesota => year >= 1863,
-                UsState::Mississippi => year >= 1863,
-                UsState::Missouri => year >= 1863,
-                UsState::Montana => year >= 1863,
-                UsState::Nebraska => year >= 1863,
             }
         }
     }
@@ -84,6 +40,8 @@ fn let_else() {
     println!("{:?}", describe_state_quarter(Coin::Quarter(UsState::Alabama)));
     println!("{:?}", describe_state_quarter(Coin::Quarter(UsState::Alaska)));
     println!("{:?}", describe_state_quarter(Coin::Nickel));
+    println!("{:?}", describe_state_quarter(Coin::Penny));
+    println!("{:?}", describe_state_quarter(Coin::Dime));
 }
 
 fn if_let() {

@@ -37,7 +37,7 @@ fn users() {
     };
     // can't modify immutable instance
     //user1.active = false;
-    println!("{}", &user1.email);
+    println!("{} {} {} {}", &user1.email, &user1.username, user1.active, user1.sign_in_count);
 
     let mut user2 = User {
         active: true,
