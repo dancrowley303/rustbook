@@ -19,7 +19,7 @@ fn enum_vectors() {
         SpreadsheetCell::Float(10.12),
     ];
 
-    for c in &row {
+    for c in row {
         match c {
             SpreadsheetCell::Int(value) => println!("{} is an int", value),
             SpreadsheetCell::Float(value) => println!("{} is a float", value),
