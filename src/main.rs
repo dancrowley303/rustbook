@@ -3,6 +3,7 @@ pub mod structs;
 pub mod enums_and_pattern_matching;
 pub mod collections;
 pub mod errors;
+pub mod generics;
 
 // use ownership::references_and_borrowing;
 // use structs::defining_structs;
@@ -13,7 +14,8 @@ pub mod errors;
 // use collections::strings;
 // use collections::hashmaps;
 // use errors::unrecoverable;
-use errors::recoverable;
+// use errors::recoverable;
+use generics::data_types;
 
 fn main() {
     // references_and_borrowing::run();
@@ -25,5 +27,6 @@ fn main() {
     // strings::run();
     // hashmaps::run();
     // unrecoverable::run();
-    recoverable::run();
+    // recoverable::run();
+    data_types::run();
 }
