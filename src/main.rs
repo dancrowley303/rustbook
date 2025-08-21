@@ -15,8 +15,8 @@ pub mod generics;
 // use collections::hashmaps;
 // use errors::unrecoverable;
 // use errors::recoverable;
-use generics::data_types;
-
+// use generics::data_types;
+use generics::traits;
 fn main() {
     // references_and_borrowing::run();
     // defining_structs::run();
@@ -28,5 +28,6 @@ fn main() {
     // hashmaps::run();
     // unrecoverable::run();
     // recoverable::run();
-    data_types::run();
+    // data_types::run();
+    traits::run();
 }
