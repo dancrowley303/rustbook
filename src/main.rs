@@ -16,7 +16,8 @@ pub mod generics;
 // use errors::unrecoverable;
 // use errors::recoverable;
 // use generics::data_types;
-use generics::traits;
+// use generics::traits;
+use generics::lifetimes;
 fn main() {
     // references_and_borrowing::run();
     // defining_structs::run();
@@ -29,5 +30,6 @@ fn main() {
     // unrecoverable::run();
     // recoverable::run();
     // data_types::run();
-    traits::run();
+    // traits::run();
+    lifetimes::run();
 }
