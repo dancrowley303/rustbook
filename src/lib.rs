@@ -99,4 +99,11 @@ mod tests {
         }
     }
 
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        // This test takes a long time
+        assert!(true);
+    }
+
 }
