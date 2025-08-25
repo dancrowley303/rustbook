@@ -3,6 +3,53 @@ pub fn run() {
     no_dangling_reference();
     generic_lifetimes_in_functions();
     return_owned_value();
+    struct_lifetime_annotations();
+    lifetime_elision();
+}
+
+fn lifetime_elision() {
+    //compiler has inferred the lifetime of the reference as:
+    // first_word<'a>(s: &'a str) -> &'a str
+    fn first_word(s: &str) -> &str {
+        let bytes = s.as_bytes();
+
+        for (i, &item) in bytes.iter().enumerate() {
+            if item == b' ' {
+                return &s[0..i];
+            }
+        }
+        &s[0..]
+    }
+
+    let s1 = String::from("hello world");
+    let s2 = String::from("hello");
+    println!("The first word of s1 is {}", first_word(s1.as_str()));
+    println!("The first word of s2 is {}", first_word(s2.as_str()));
+}
+
+fn struct_lifetime_annotations() {
+    struct ImportantExcerpt<'a> {
+        part: &'a str,
+    }
+
+    // enforcing the struct to live as long as the reference
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().unwrap();
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
+    println!("First sentence: {}", i.part);
+
+    // below does not work because the borrowed value does not live long enough
+    // let i: ImportantExcerpt;
+    // {
+    //     let novel = String::from("Call me Ishmael. Some years ago...");
+    //     let first_sentence = novel.split('.').next().unwrap();
+    //     i = ImportantExcerpt {
+    //         part: first_sentence,
+    //     };
+    // }
+    // println!("First sentence: {}", i.part);
 }
 
 fn return_owned_value() {
