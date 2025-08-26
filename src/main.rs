@@ -4,6 +4,7 @@ pub mod enums_and_pattern_matching;
 pub mod collections;
 pub mod errors;
 pub mod generics;
+pub mod functional_features;
 
 // use ownership::references_and_borrowing;
 // use structs::defining_structs;
@@ -17,7 +18,8 @@ pub mod generics;
 // use errors::recoverable;
 // use generics::data_types;
 // use generics::traits;
-use generics::lifetimes;
+// use generics::lifetimes;
+use functional_features::closures;
 fn main() {
     // references_and_borrowing::run();
     // defining_structs::run();
@@ -31,5 +33,6 @@ fn main() {
     // recoverable::run();
     // data_types::run();
     // traits::run();
-    lifetimes::run();
+    // lifetimes::run();
+    closures::run();
 }
